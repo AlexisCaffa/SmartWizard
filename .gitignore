@@ -17,4 +17,4 @@
 *.stTheme.cache
 *.sublime-workspace
 *.sublime-project
-/nbproject/private/
+/nbproject/private/package-lock.json
