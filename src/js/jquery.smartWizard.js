@@ -413,8 +413,6 @@
                 if(curPage && curPage.length > 0) { curPage.hide(); }
                 selPage.show();
             }
-            // Change the url hash to new step
-            this._setURLHash(selTab.attr("href"));
             // Update controls
             this._setAnchor(idx);
             // Set the buttons based on the step
@@ -491,11 +489,6 @@
             if (e.isDefaultPrevented()) { return false; }
             return e.result;
         },
-        _setURLHash: function (hash) {
-            if(this.options.showStepURLhash && window.location.hash !== hash){
-                window.location.hash = hash;
-            }
-        },
 
 // PUBLIC FUNCTIONS
 
@@ -522,7 +515,6 @@
             this.pages.stop(true);
             this.pages.hide();
             this.current_index = null;
-            this._setURLHash(this.steps.eq(this.options.selected).attr("href"));
             $(".sw-toolbar", this.main).remove();
             this.steps.removeClass();
             this.steps.parents('li').removeClass();
